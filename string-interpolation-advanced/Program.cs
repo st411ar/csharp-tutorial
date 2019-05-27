@@ -62,6 +62,10 @@ namespace StringInterpolationAdvanced
                 var cultureSpecificMessage = message.ToString(culture);
                 Console.WriteLine($"{culture.Name,-10}{cultureSpecificMessage}");
             }
+
+
+            string messageInInvariantCulture = FormattableString.Invariant($"Date and time in invariant culture: {DateTime.Now}");
+            Console.WriteLine(messageInInvariantCulture);
         }
     }
 }
