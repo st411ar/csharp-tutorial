@@ -6,7 +6,8 @@ namespace StringInterpolationTutorial
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var name = "Vitaly";
+            Console.WriteLine($"Hello, {name}. It's a pleasure to meet you!");
         }
     }
 }
