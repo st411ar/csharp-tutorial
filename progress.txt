@@ -17,7 +17,7 @@ x	Tutorials
 		Explore C# 7.0 (Explore C# 7.0 - C# interactive tutorial)
 +		Explore string interpolation - interactive (Use string interpolation to construct formatted strings)
 +		Explore string interpolation - in your environment (Use string interpolation to construct formatted strings)
--		Advanced scenarios for string Interpolation (String interpolation in C#)
++		Advanced scenarios for string Interpolation (String interpolation in C#)
 		Safely update interfaces with default interface members (Tutorial: Update interfaces with default interface members in C# 8.0)
 -		Explore indexes and ranges (Indices and ranges)
 -		Work with nullable reference types (Tutorial: Express your design intent more clearly with nullable and non-nullable reference types)
