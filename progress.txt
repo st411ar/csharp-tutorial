@@ -1,0 +1,33 @@
+	C# Guide
+	Get started with C#
+x	Tutorials
+		Overview (C# Tutorials)
++			Choose your first lesson (Introduction to C#)
++			Hello World (Hello World - Introduction to C# interactive C# tutorial)
++			Numbers in C# (Manipulate integral and floating point numbers in C#)
++			Branches and loops (Learn conditional logic with branch and loop statements)
++			List collections (Learn to manage data collections using the generic list type)
++				Setup your environment (Become familiar with the .NET development tools)
++				Numbers in C# (Manipulate integral and floating point numbers in C#)
++				Branches and loops (Learn conditional logic with branch and loop statements)
++				List collections (Learn to manage data collections using the generic list type)
++				Introduction to classes (Explore object oriented programming with classes and objects)
++!		Explore C# 6 (Explore C# 6 - C# interactive C# tutorial)
+			! .net core + wpf
+		Explore C# 7.0 (Explore C# 7.0 - C# interactive tutorial)
+-		Explore string interpolation - interactive (Use string interpolation to construct formatted strings)
+-		Explore string interpolation - in your environment (Use string interpolation to construct formatted strings)
+-		Advanced scenarios for string Interpolation (String interpolation in C#)
+		Safely update interfaces with default interface members (Tutorial: Update interfaces with default interface members in C# 8.0)
+-		Explore indexes and ranges (Indices and ranges)
+-		Work with nullable reference types (Tutorial: Express your design intent more clearly with nullable and non-nullable reference types)
+-		Upgrade an app to nullable reference types (Tutorial: Migrate existing code with nullable reference types)
+		Generate and consume asynchronous streams (Tutorial: Generate and consume async streams using C# 8.0 and .NET Core 3.0)
+-		Extend data capabilities using pattern matching (Tutorial: Using pattern matching features to extend data types)
+-		Console Application
+-		REST Client
+-		Inheritance in C# and .NET
+-		Working with LINQ
+-		Using Attributes (Using Attributes in C#)
+	Tour of C#
+	...
