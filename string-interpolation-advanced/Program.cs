@@ -16,6 +16,17 @@ namespace StringInterpolationAdvanced
 
             var date = new DateTime(1731, 11, 25);
             Console.WriteLine($"On {date:dddd, MMMM dd, yyyy} Leonhard Euler introduced the letter e to denote {Math.E:f5} in a letter to Christian Goldbach.");
+
+
+            const int NameAlignment = -9;
+            const int ValueAlignment = 7;
+
+            a = 3;
+            b = 4;
+            Console.WriteLine($"Three classical Pythagorean means of {a} and {b}:");
+            Console.WriteLine($"|{"Arithmetic",NameAlignment}|{0.5 * (a + b),ValueAlignment:f3}|");
+            Console.WriteLine($"|{"Geometric",NameAlignment}|{Math.Sqrt(a * b),ValueAlignment:f3}|");
+            Console.WriteLine($"|{"Harmonic",NameAlignment}|{2 / (1/a + 1/b),ValueAlignment:f3}|");
         }
     }
 }
