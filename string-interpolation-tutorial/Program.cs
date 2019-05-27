@@ -27,6 +27,8 @@ namespace StringInterpolationTutorial
             {
                 Console.WriteLine($"|{unit.Key,-25}|{unit.Value,10}|");
             }
+
+            Console.WriteLine($"[{DateTime.Now,-20:d}] Hour [{DateTime.Now,-10:HH}] [{1063.342,15:N2}] feet");
         }
     }
 }
