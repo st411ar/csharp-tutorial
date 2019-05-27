@@ -5,6 +5,8 @@ namespace StringInterpolationTutorial
 {
     class Program
     {
+        public enum Unit { item, kilogram, gram, dozen };
+
         static void Main(string[] args)
         {
             var name = "Vitaly";
@@ -23,12 +25,18 @@ namespace StringInterpolationTutorial
             Console.WriteLine($"Inventory on {DateTime.Now:d}");
             Console.WriteLine(" ");
             Console.WriteLine($"|{"Item",-25}|{"Quantity",10}|");
-            foreach (var unit in inventory)
+            foreach (var entry in inventory)
             {
-                Console.WriteLine($"|{unit.Key,-25}|{unit.Value,10}|");
+                Console.WriteLine($"|{entry.Key,-25}|{entry.Value,10}|");
             }
 
             Console.WriteLine($"[{DateTime.Now,-20:d}] Hour [{DateTime.Now,-10:HH}] [{1063.342,15:N2}] feet");
+
+            var element = new Vegetable("eggplant");
+            var dateTime = DateTime.Now;
+            var price = 1.99m;
+            var unit = Unit.item;
+            Console.WriteLine($"On {dateTime}, the price of {element} was {price} per {unit}.");
         }
     }
 }
