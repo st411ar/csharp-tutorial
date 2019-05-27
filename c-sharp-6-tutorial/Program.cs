@@ -10,10 +10,10 @@ namespace CSharp6Tutorial
     {
         static void Main(string[] args)
         {
-            // WorkingWithStrings();
-            // WorkingWithNull();
-            // WorkingWithExceptionFilter();
-            // WorkingWithNameOf();
+            WorkingWithStrings();
+            WorkingWithNull();
+            WorkingWithExceptionFilter();
+            WorkingWithNameOf();
             WorkingWithObjectInitialization();
         }
 
