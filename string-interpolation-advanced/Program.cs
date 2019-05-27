@@ -12,6 +12,10 @@ namespace StringInterpolationAdvanced
             Console.WriteLine($"Length of the hypotenuse of the right triangle with legs of {a} and {b} is {CalculateTypotenuse(a, b)}");
 
             double CalculateTypotenuse(double leg1, double leg2) => Math.Sqrt(leg1 * leg1 + leg2 * leg2);
+
+
+            var date = new DateTime(1731, 11, 25);
+            Console.WriteLine($"On {date:dddd, MMMM dd, yyyy} Leonhard Euler introduced the letter e to denote {Math.E:f5} in a letter to Christian Goldbach.");
         }
     }
 }
