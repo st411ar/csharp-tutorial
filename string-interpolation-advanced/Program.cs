@@ -27,6 +27,17 @@ namespace StringInterpolationAdvanced
             Console.WriteLine($"|{"Arithmetic",NameAlignment}|{0.5 * (a + b),ValueAlignment:f3}|");
             Console.WriteLine($"|{"Geometric",NameAlignment}|{Math.Sqrt(a * b),ValueAlignment:f3}|");
             Console.WriteLine($"|{"Harmonic",NameAlignment}|{2 / (1/a + 1/b),ValueAlignment:f3}|");
+
+
+            var xs = new int[] { 1, 2, 7, 9 };
+            var ys = new int[] { 7, 9, 12 };
+            Console.WriteLine($"Find the intersection of the {{{string.Join(", ",xs)}}} and {{{string.Join(", ",ys)}}} sets.");
+
+            var userName = "Jane";
+            var stringWithEscapes = $"C:\\Users\\{userName}\\Documents";
+            var verbatimInterpolated = $@"C:\Users\{userName}\Documents";
+            Console.WriteLine(stringWithEscapes);
+            Console.WriteLine(verbatimInterpolated);
         }
     }
 }
