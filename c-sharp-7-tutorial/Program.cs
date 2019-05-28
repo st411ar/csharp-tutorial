@@ -7,9 +7,10 @@ namespace CSharp7Tutorial
     {
         static void Main(string[] args)
         {
-            OutVariableDeclaration();
-            Tuples();
-            TypePatternWithIsExpression();
+            // OutVariableDeclaration();
+            // Tuples();
+            // TypePatternWithIsExpression();
+            TypePatternWithSwitchStatement();
         }
 
         static void OutVariableDeclaration()
@@ -87,6 +88,60 @@ namespace CSharp7Tutorial
             else
             {
                 Console.WriteLine($"{count} is not an integer");
+            }
+        }
+
+        static void TypePatternWithSwitchStatement()
+        {
+            test(5);
+
+            long longValue = 12;
+            test(longValue);
+
+            int? answer = 42;
+            test(answer);
+
+            double pi = 3.14;
+            test(pi);
+
+            string sum = "12";
+            test(sum);
+
+            answer = null;
+            test(answer);
+
+            string message = "This is a longer message";
+            test(message);
+
+            void test(object obj)
+            {
+                switch (obj)
+                {
+                    case 5:
+                        Console.WriteLine("The object is 5");
+                        break;
+                    case int i:
+                        Console.WriteLine($"The object is an integer: {i}");
+                        break;
+                    case long l:
+                        Console.WriteLine($"The object is a long: {l}");
+                        break;
+                    case double d:
+                        Console.WriteLine($"The object is a double: {d}");
+                        break;
+                    case string s when s.StartsWith("This"):
+                        Console.WriteLine($"This was a string that started with the word 'This': {s}");
+                        break;
+                    case string s:
+                        Console.WriteLine($"The object is a string: {s}");
+                        break;
+                    case null:
+                        Console.WriteLine($"The object is null");
+                        break;
+                    default:
+                        Console.WriteLine($"The object is some other type");
+                        break;
+                }
             }
         }
     }
