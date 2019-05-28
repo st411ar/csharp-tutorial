@@ -10,7 +10,8 @@ namespace CSharp7Tutorial
             // OutVariableDeclaration();
             // Tuples();
             // TypePatternWithIsExpression();
-            TypePatternWithSwitchStatement();
+            // TypePatternWithSwitchStatement();
+            RefLocalAndReturn();
         }
 
         static void OutVariableDeclaration()
@@ -113,36 +114,70 @@ namespace CSharp7Tutorial
             string message = "This is a longer message";
             test(message);
 
-            void test(object obj)
+        }
+
+        static void RefLocalAndReturn()
+        {
+            int[,] sourceMatrix = new int[10, 10];
+            for (int x = 0; x < 10; x++)
             {
-                switch (obj)
+                for (int y = 0; y < 10; y++)
                 {
-                    case 5:
-                        Console.WriteLine("The object is 5");
-                        break;
-                    case int i:
-                        Console.WriteLine($"The object is an integer: {i}");
-                        break;
-                    case long l:
-                        Console.WriteLine($"The object is a long: {l}");
-                        break;
-                    case double d:
-                        Console.WriteLine($"The object is a double: {d}");
-                        break;
-                    case string s when s.StartsWith("This"):
-                        Console.WriteLine($"This was a string that started with the word 'This': {s}");
-                        break;
-                    case string s:
-                        Console.WriteLine($"The object is a string: {s}");
-                        break;
-                    case null:
-                        Console.WriteLine($"The object is null");
-                        break;
-                    default:
-                        Console.WriteLine($"The object is some other type");
-                        break;
+                    sourceMatrix[x, y] = x * 10 + y;
                 }
             }
+
+            var indices = Find(sourceMatrix, (val) => val == 42);
+            Console.WriteLine(indices);
+            sourceMatrix[indices.i, indices.j] = 24;
+        }
+
+
+        private static void test(object obj)
+        {
+            switch (obj)
+            {
+                case 5:
+                    Console.WriteLine("The object is 5");
+                    break;
+                case int i:
+                    Console.WriteLine($"The object is an integer: {i}");
+                    break;
+                case long l:
+                    Console.WriteLine($"The object is a long: {l}");
+                    break;
+                case double d:
+                    Console.WriteLine($"The object is a double: {d}");
+                    break;
+                case string s when s.StartsWith("This"):
+                    Console.WriteLine($"This was a string that started with the word 'This': {s}");
+                    break;
+                case string s:
+                    Console.WriteLine($"The object is a string: {s}");
+                    break;
+                case null:
+                    Console.WriteLine($"The object is null");
+                    break;
+                default:
+                    Console.WriteLine($"The object is some other type");
+                    break;
+            }
+        }
+
+        private static (int i, int j) Find(int[,] matrix, Func<int, bool> predicate)
+        {
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    if (predicate(matrix[i, j]))
+                    {
+                        return (i, j);
+                    }
+                }
+            }
+
+            return (-1, -1);
         }
     }
 }
