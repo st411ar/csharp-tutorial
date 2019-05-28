@@ -127,9 +127,10 @@ namespace CSharp7Tutorial
                 }
             }
 
-            var indices = Find(sourceMatrix, (val) => val == 42);
-            Console.WriteLine(indices);
-            sourceMatrix[indices.i, indices.j] = 24;
+            ref int valItem = ref Find(sourceMatrix, (val) => val == 42);
+            Console.WriteLine(valItem);
+            valItem = 24;
+            Console.WriteLine(sourceMatrix[4, 2]);
         }
 
 
@@ -164,7 +165,7 @@ namespace CSharp7Tutorial
             }
         }
 
-        private static (int i, int j) Find(int[,] matrix, Func<int, bool> predicate)
+        private static ref int Find(int[,] matrix, Func<int, bool> predicate)
         {
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
@@ -172,12 +173,12 @@ namespace CSharp7Tutorial
                 {
                     if (predicate(matrix[i, j]))
                     {
-                        return (i, j);
+                        return ref matrix[i, j];
                     }
                 }
             }
 
-            return (-1, -1);
+            throw new InvalidOperationException("Not found");
         }
     }
 }
