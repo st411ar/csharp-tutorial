@@ -7,11 +7,11 @@ namespace CSharp7Tutorial
     {
         static void Main(string[] args)
         {
-            // OutVariableDeclaration();
-            // Tuples();
-            // TypePatternWithIsExpression();
-            // TypePatternWithSwitchStatement();
-            // RefLocalAndReturn();
+            OutVariableDeclaration();
+            Tuples();
+            TypePatternWithIsExpression();
+            TypePatternWithSwitchStatement();
+            RefLocalAndReturn();
             LocalFunctions();
         }
 
