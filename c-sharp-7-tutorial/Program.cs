@@ -6,7 +6,21 @@ namespace CSharp7Tutorial
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            OutVariableDeclaration();
+        }
+
+        static void OutVariableDeclaration()
+        {
+            var input = "1234";
+            int numericResult;
+            if (int.TryParse(input, out numericResult))
+            {
+                Console.WriteLine(numericResult);
+            }
+            else
+            {
+                Console.WriteLine("Could not parse input");
+            }
         }
     }
 }
