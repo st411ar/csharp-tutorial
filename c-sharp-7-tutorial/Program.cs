@@ -21,6 +21,25 @@ namespace CSharp7Tutorial
             {
                 Console.WriteLine("Could not parse input");
             }
+
+            if (int.TryParse(input, out int result))
+            {
+                Console.WriteLine(result);
+            }
+            else
+            {
+                Console.WriteLine("Could not parse input");
+            }
+            Console.WriteLine(result);
+
+            if (int.TryParse(input, out var answer))
+            {
+                Console.WriteLine(answer);
+            }
+            else
+            {
+                Console.WriteLine("Could not parse input");
+            }
         }
     }
 }
