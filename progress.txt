@@ -14,7 +14,7 @@ x	Tutorials
 +				Introduction to classes (Explore object oriented programming with classes and objects)
 +!		Explore C# 6 (Explore C# 6 - C# interactive C# tutorial)
 			! .net core + wpf
-		Explore C# 7.0 (Explore C# 7.0 - C# interactive tutorial)
++		Explore C# 7.0 (Explore C# 7.0 - C# interactive tutorial)
 +		Explore string interpolation - interactive (Use string interpolation to construct formatted strings)
 +		Explore string interpolation - in your environment (Use string interpolation to construct formatted strings)
 +		Advanced scenarios for string Interpolation (String interpolation in C#)
