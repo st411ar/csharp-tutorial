@@ -161,9 +161,14 @@ namespace CSharp7Tutorial
                     throw new ArgumentException($"{nameof(end)} must be greater than {nameof(start)}");
                 }
 
-                for (var c = start; c < end; c++)
+                return alphabetSubsetImplementation();
+
+                IEnumerable<char> alphabetSubsetImplementation()
                 {
-                    yield return c;
+                    for (var c = start; c < end; c++)
+                    {
+                        yield return c;
+                    }
                 }
             }
 
