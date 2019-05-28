@@ -9,6 +9,7 @@ namespace CSharp7Tutorial
         {
             OutVariableDeclaration();
             Tuples();
+            TypePatternWithIsExpression();
         }
 
         static void OutVariableDeclaration()
@@ -74,6 +75,19 @@ namespace CSharp7Tutorial
 
             (int maxValue, _) = Range(numbers);
             Console.WriteLine(max);
+        }
+
+        static void TypePatternWithIsExpression()
+        {
+            object count = "5";
+            if (count is int number)
+            {
+                Console.WriteLine(number);
+            }
+            else
+            {
+                Console.WriteLine($"{count} is not an integer");
+            }
         }
     }
 }
