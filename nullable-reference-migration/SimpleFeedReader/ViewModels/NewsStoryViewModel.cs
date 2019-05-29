@@ -7,8 +7,8 @@ namespace SimpleFeedReader.ViewModels
     public class NewsStoryViewModel
     {
         public DateTimeOffset Published { get; set; }
-        public string Title { get; set; }
-        public string Uri { get; set; }
+        public string Title { get; set; } = default!;
+        public string Uri { get; set; } = default!;
     }
     #nullable restore
     // </SnippetStarterViewModel>
