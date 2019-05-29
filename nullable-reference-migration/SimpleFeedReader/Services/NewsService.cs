@@ -61,6 +61,7 @@ namespace SimpleFeedReader.Services
     }
 
     // <SnippetConfigureAutoMapper>
+    #nullable enable
     public class NewsStoryProfile : Profile
     {
         public NewsStoryProfile()
@@ -68,8 +69,11 @@ namespace SimpleFeedReader.Services
             // Create the AutoMapper mapping profile between the 2 objects.
             // ISyndicationItem.Id maps to NewsStoryViewModel.Uri.
             CreateMap<ISyndicationItem, NewsStoryViewModel>()
-                .ForMember(dest => dest.Uri, opts => opts.MapFrom(src => src.Id));
+                .ForCtorParam("published", opt => opt.MapFrom(src => src.Published))
+                .ForCtorParam("title", opt => opt.MapFrom(src => src.Title))
+                .ForCtorParam("uri", opt => opt.MapFrom(src => src.Id));
         }
     }
+    #nullable restore
     // </SnippetConfigureAutoMapper>
 }
