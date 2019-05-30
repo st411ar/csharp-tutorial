@@ -10,6 +10,11 @@ namespace TollCalculator
     {
         static void Main(string[] args)
         {
+            BasicTollCalculations();
+        }
+
+        static void BasicTollCalculations()
+        {
             var tollCalc = new TollCalculator();
 
             var car = new Car();
