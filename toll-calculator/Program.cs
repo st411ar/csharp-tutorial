@@ -12,6 +12,7 @@ namespace TollCalculator
         {
             BasicTollCalculations();
             OccupancyPricing();
+            PeakPricing();
         }
 
         static void BasicTollCalculations()
@@ -100,6 +101,37 @@ namespace TollCalculator
             catch (ArgumentNullException e)
             {
                 Console.WriteLine("Caught an argument exception when using null");
+            }
+        }
+
+        static void PeakPricing()
+        {
+            Console.WriteLine("Testing the time premiums");
+            var tollCalc = new TollCalculator();
+
+            var testTimes = new DateTime[]
+            {
+                new DateTime(2019, 3, 4, 8, 0, 0), // morning rush
+                new DateTime(2019, 3, 6, 11, 30, 0), // daytime
+                new DateTime(2019, 3, 7, 17, 15, 0), // evening rush
+                new DateTime(2019, 3, 14, 03, 30, 0), // overnight
+
+                new DateTime(2019, 3, 16, 8, 30, 0), // weekend morning rush
+                new DateTime(2019, 3, 17, 14, 30, 0), // weekend daytime
+                new DateTime(2019, 3, 17, 18, 05, 0), // weekend evening rush
+                new DateTime(2019, 3, 16, 01, 30, 0), // weekend overnight
+            };
+
+            foreach (var time in testTimes)
+            {
+                Console.WriteLine($"Inbound premium at {time} is {tollCalc.PeakTimePremiumFull(time, true)}");
+                Console.WriteLine($"Outbound premium at {time} is {tollCalc.PeakTimePremiumFull(time, false)}");
+            }
+            Console.WriteLine("====================================================");
+            foreach (var time in testTimes)
+            {
+                Console.WriteLine($"Inbound premium at {time} is {tollCalc.PeakTimePremium(time, true)}");
+                Console.WriteLine($"Outbound premium at {time} is {tollCalc.PeakTimePremium(time, false)}");
             }
         }
     }
