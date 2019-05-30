@@ -23,7 +23,7 @@ x	Tutorials
 +		Work with nullable reference types (Tutorial: Express your design intent more clearly with nullable and non-nullable reference types)
 +		Upgrade an app to nullable reference types (Tutorial: Migrate existing code with nullable reference types)
 		Generate and consume asynchronous streams (Tutorial: Generate and consume async streams using C# 8.0 and .NET Core 3.0)
--		Extend data capabilities using pattern matching (Tutorial: Using pattern matching features to extend data types)
++		Extend data capabilities using pattern matching (Tutorial: Using pattern matching features to extend data types)
 -		Console Application
 -		REST Client
 -		Inheritance in C# and .NET
