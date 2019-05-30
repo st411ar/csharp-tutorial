@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -29,11 +30,11 @@ namespace SimpleFeedReader.Tests.Services
             var feedUrl = "https://azure.microsoft.com/en-us/blog/feed/";
 
             // Act
-            List<NewsStoryViewModel> result =
+            IEnumerable<NewsStoryViewModel> result =
                 await _newsService.GetNews(feedUrl);
 
             // Assert
-            Assert.True(result.Count > 0);
+            Assert.True(result.Any());
         }
        
         [Fact]

@@ -10,6 +10,7 @@ using SimpleFeedReader.ViewModels;
 
 namespace SimpleFeedReader.Services
 {
+    #nullable enable
     public class NewsService
     {
         private readonly IMapper _mapper;
@@ -19,7 +20,7 @@ namespace SimpleFeedReader.Services
             _mapper = mapper;
         }
 
-        public async Task<List<NewsStoryViewModel>> GetNews(string feedUrl)
+        public async Task<IEnumerable<NewsStoryViewModel>> GetNews(string feedUrl)
         {
             var news = new List<NewsStoryViewModel>();
             var feedUri = new Uri(feedUrl);
@@ -56,9 +57,10 @@ namespace SimpleFeedReader.Services
                 }
             }
 
-            return news.OrderByDescending(story => story.Published).ToList();
+            return news.OrderByDescending(story => story.Published);
         }
     }
+    #nullable restore
 
     // <SnippetConfigureAutoMapper>
     #nullable enable
