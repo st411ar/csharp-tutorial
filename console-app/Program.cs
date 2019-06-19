@@ -45,15 +45,16 @@ namespace TelepromterConsole
         }
 
 
-        private static async Task ShowTeleprompter()
+        private static async Task ShowTeleprompter(TelePrompterConfig config)
         {
             var words = ReadFrom("sampleQuotes.txt");
             foreach (var word in words) {
                 Console.Write(word);
                 if (!string.IsNullOrWhiteSpace(word)) {
-                    await Task.Delay(200);
+                    await Task.Delay(config.DelayInMilliseconds);
                 }
             }
+            config.SetDone();
         }
 
         private static asyns Task GetInput()
