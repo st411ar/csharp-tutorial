@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace TelepromterConsole
+namespace TeleprompterConsole
 {
     class Program
     {
@@ -57,7 +57,7 @@ namespace TelepromterConsole
             config.SetDone();
         }
 
-        private static asyns Task GetInput()
+        private static async Task GetInput()
         {
             var delay = 200;
             Action work = () =>
