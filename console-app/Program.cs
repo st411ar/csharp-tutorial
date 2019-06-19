@@ -57,24 +57,23 @@ namespace TeleprompterConsole
             config.SetDone();
         }
 
-        private static async Task GetInput()
+        private static async Task GetInput(TelePrompterConfig config)
         {
-            var delay = 200;
             Action work = () =>
             {
                 do {
                     var key = Console.ReadKey(true);
                     if (key.KeyChar == '>') {
-                        delay -= 10;
+                        config.UpdateDelay(-10);
                     }
                     else if (key.KeyChar == '<') {
-                        delay += 10;
+                        config.UpdateDelay(10);
                     }
                     else if (key.KeyChar == 'X' || key.KeyChar == 'x')
                     {
-                        break;
+                        config.SetDone();
                     }
-                } while (true);
+                } while (!config.Done);
             };
             await Task.Run(work);
         }
