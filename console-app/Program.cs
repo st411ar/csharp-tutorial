@@ -21,6 +21,7 @@ namespace TelepromterConsole
             }
         }
 
+
         static IEnumerable<string> ReadFrom(string file)
         {
             string line;
@@ -42,5 +43,18 @@ namespace TelepromterConsole
                 }
             }
         }
+
+
+        private static async Task ShowTeleprompter()
+        {
+            var words = ReadFrom("sampleQuotes.txt");
+            foreach (var word in words) {
+                Console.Write(word);
+                if (!string.IsNullOrWhiteSpace(word)) {
+                    await Task.Delay(200);
+                }
+            }
+        }
+
     }
 }
