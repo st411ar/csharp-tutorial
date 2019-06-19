@@ -45,6 +45,15 @@ namespace TeleprompterConsole
         }
 
 
+        private static async Task RunTeleprompter()
+        {
+            var config = new TelePrompterConfig();
+            var displayTask = ShowTeleprompter(config);
+            var speedTask = GetInput(config);
+
+            await Task.WhenAny(displayTask, speedTask);
+        }
+
         private static async Task ShowTeleprompter(TelePrompterConfig config)
         {
             var words = ReadFrom("sampleQuotes.txt");
