@@ -56,5 +56,27 @@ namespace TelepromterConsole
             }
         }
 
+        private static asyns Task GetInput()
+        {
+            var delay = 200;
+            Action work = () =>
+            {
+                do {
+                    var key = Console.ReadKey(true);
+                    if (key.KeyChar == '>') {
+                        delay -= 10;
+                    }
+                    else if (key.KeyChar == '<') {
+                        delay += 10;
+                    }
+                    else if (key.KeyChar == 'X' || key.KeyChar == 'x')
+                    {
+                        break;
+                    }
+                } while (true);
+            };
+            await Task.Run(work);
+        }
+
     }
 }
